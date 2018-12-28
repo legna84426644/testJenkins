@@ -10,7 +10,7 @@ pipeline {
                 echo 'Building..'
 				sh 'uname -a'
 				sh '/usr/bin/sshpass -f passFile ssh regression@10.10.2.32 vim-cmd vmsvc/power.reset 14'
-				sleep 180
+				sleep 300
             }
         }
         stage('Test') {
