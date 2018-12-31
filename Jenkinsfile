@@ -19,7 +19,7 @@ pipeline {
             }
             steps {
                 echo 'Testing..'
-				cd '/Users/vsee'
+				sh 'cd /Users/vsee'
 				sh 'test.sh'
             }
         }
