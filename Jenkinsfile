@@ -19,7 +19,8 @@ pipeline {
             }
             steps {
                 echo 'Testing..'
-				sh 'curl -O http://10.10.40.249:8080/jnlpJars/agent.jar && java -jar agent.jar'
+				cd '/Users/vsee'
+				java  -jar remoting.jar -workDir /Users/vsee
             }
         }
         stage('Post Test') {
