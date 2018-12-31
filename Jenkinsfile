@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Testing..'
 				cd '/Users/vsee'
-				java -jar remoting.jar -workDir /Users/vsee
+				sh 'test.sh'
             }
         }
         stage('Post Test') {
