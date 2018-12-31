@@ -19,7 +19,8 @@ pipeline {
             }
             steps {
                 echo 'Start agent'
-				sh '/usr/bin/sshpass -f /home/regression/passFile ssh vsee@10.10.40.250 "java -jar remoting.jar"'
+				sh 'uname -a'
+				sh '/usr/bin/sshpass -f passFile ssh vsee@10.10.40.250 "java -jar remoting.jar"'
             }
         }
         stage('Test') {
