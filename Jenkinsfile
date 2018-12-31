@@ -10,7 +10,7 @@ pipeline {
                 echo 'Building..'
 				sh 'uname -a'
 				sh '/usr/bin/sshpass -f passFile ssh regression@10.10.2.32 vim-cmd vmsvc/power.reset 14'
-				sleep 300
+				sleep 120
             }
         }
         stage('Test') {
@@ -19,7 +19,7 @@ pipeline {
             }
             steps {
                 echo 'Testing..'
-				sh 'uname -a'
+				sh 'curl -O http://10.10.40.249:8080/jnlpJars/agent.jar && java -jar agent.jar'
             }
         }
         stage('Post Test') {
