@@ -19,8 +19,10 @@ pipeline {
                 label 'Katalon-Mac01'
             }
             steps {
-                echo 'Testing..'
-				sh 'uname -a'
+                echo 'Coppy App...'
+				sh 'sh copyapp.sh'
+				echo 'Run Test...'
+				sh 'sh runtest.sh'
             }
         }
         stage('Post Test') {
