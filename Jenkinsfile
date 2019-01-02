@@ -11,9 +11,7 @@ pipeline {
 				sh 'who'
 				sh 'uname -a'
 				sh '/usr/bin/sshpass -f passFile ssh regression@10.10.2.32 vim-cmd vmsvc/power.reset 14'
-				sleep 81
-				echo 'Launch agent'
-				sh 'ssh -i /home/regression/.ssh/test_rsa vsee@10.10.40.250 "cd /Users/vsee/ && curl -O http://10.10.40.249:8080/jnlpJars/agent.jar && java -jar agent.jar"'
+				sleep 120
             }
         }
         stage('Test') {
