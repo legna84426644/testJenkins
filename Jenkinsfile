@@ -8,6 +8,7 @@ pipeline {
             }
             steps {
                 echo 'Restart and wait'
+				sh 'who'
 				sh 'uname -a'
 				sh '/usr/bin/sshpass -f passFile ssh regression@10.10.2.32 vim-cmd vmsvc/power.reset 14'
 				sleep 120
