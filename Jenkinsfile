@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Start agent'
 				sh 'uname -a'
-				sh '/usr/bin/sshpass -f passFile ssh vsee@10.10.40.250 "java -jar remoting.jar"'
+				sh 'ssh -i /var/lib/jenkins/.ssh/test_rsa vsee@10.10.40.233 "cd /Users/vsee/thanh/ && curl -O http://10.10.40.249:8080/jnlpJars/agent.jar && java -jar agent.jar"'
             }
         }
         stage('Test') {
